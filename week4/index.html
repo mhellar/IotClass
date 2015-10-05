@@ -37,37 +37,40 @@
                     </figure>
                 </section>
 
-                <section data-background="https://media.giphy.com/media/I7kkegrRyNrk4/giphy.gif">
-                    <h3>Slides are here: http://mhellar.github.io/iot3/</h3>
+                <section data-background="https://openclipart.org/download/208615/evil-robot-glitch-remix.svg">
+                    <h3><b>Slides are here: http://mhellar.github.io/IotClass/week4</b></h3>
                     <br>
-                    <h3>Grab the code here: https://github.com/mhellar/iot3</h3>
+                    <h3><b>Grab the code here: https://github.com/mhellar/iot3</b></h3>
                 </section>
 
 
                 <section>
                     <ul>
                         <h3>Topics for This Week:</h3>
-                        <li class="fragment">Analog Input</li>
-                        <li class="fragment">Analog Output</li>
-                        <li class="fragment">RGB Color Mixing</li>
-                        <li class="fragment">Controlling Motion With a Servo</li>
-                        <li class="fragment">Serial Communication Part 1</li>
+                        <li class="fragment">Driving Higher Power Circuits</li>
+                        <li class="fragment">Introduction to NodeJS</li>
+                        <li class="fragment">Connecting to external Software: Part 1</li>
                     </ul>
                 </section>
                 
                 <section>                    
-                        <iframe width="840" height="630" src="https://www.youtube.com/embed/ngygk20M1pI" frameborder="0" allowfullscreen></iframe>
+                        <iframe src="https://player.vimeo.com/video/16379803" width="1000" height="542" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="https://vimeo.com/16379803">Viktor &ndash; 5000 Years of Chairs</a></p>
                 </section>
 
                 <section>                    
                         <iframe src="https://player.vimeo.com/video/44480836" width="1000" height="562" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
                 </section>
-
-                <!-- Example of nested vertical slides -->
+                <section>                    
+                        <h4>Cool board of the Week:</h4>
+                        <a href="https://www.adafruit.com/products/2000">Trinket Pro:</a><br><br>
+                        <h4>Cool Meetup</h4>
+                        <a href="http://www.meetup.com/Hackster-SF">Tuesday Hardware Hacks!</a>
+                </section>
+                
                 <section>
                     <section>
-                        <h3>Project 1<br> Analog in / Analog Out</h3>
-                        <img src="img/real.jpg" height="500">
+                        <h3>Project 1<br>Controlling a higher power load</h3>
+                        <img src="img/motor.jpg" height="500">
                         <br>
                         <a href="#" class="navigate-down">
                         </a>
@@ -76,58 +79,65 @@
                         <h3>Parts for this project:</h3>
                         <ul>
                         <li>Solderless Breadboard</li>
-                        <li>8 x Flexible Wire Jumpers</li>
-                        <li>1 x RGB LED</li>
-                        <li>3 x 220 Ohm Resistors</li>
-                        <li>1 x Blue Potentiometer with white knob</li>
+                        <li>5 x Flexible Wire Jumpers</li>
+                        <li>1 x DC Motor</li>
+                        <li>1 x 9 volt Battery</li>
+                        <li>1 x 9 volt Battery Clip</li>
+                        <li>1 x irf520 Transistor</li>
                         <li>Arduino Duo board</li>
                         <li>USB Cable</li>
                         </ul>
                     </section>
                     <section>
-                    <h3>The Circuit</h3>
-                    <img src="img/real.jpg" height="600">
+                        <h3>Step 1</h3><br>
+                        <img src="img/step1_motor.png" height="500">
+                        <br>
+                        <a href="#" class="navigate-down">
+                        </a>
                     </section>
                     <section>
-                    <img src="img/real.jpg" height="500">
-                    <ul>
-                    <li>Connect 5V and GND to the side strips</li>
-                    <li>Connect the short leads of the LED to pins 9,10,11 in series with a resistor.</li>
-                    </ul>
+                    <h3>Step 2</h3><br>
+                        <img src="img/step2_motor.png" height="500">
+                        <br>
+                        <a href="#" class="navigate-down">
+                        </a>
                     </section>
                     <section>
-                    <table>
-                    <tr>
-                    <img src="img/real.jpg" height="450">
-                    </tr>
-                    <tr>
-                    <ul>
-                    <li>Connect the Potentiometer across 3 rows</li>
-                    <li>One side goes to ground.</li>
-                    <li>The other goes to +5V</li>
-                    <li>The Center Pin Connects to analog in 0 (Marked A0)</li>
-                    </ul>
-                    </tr>
-                    </table>
-
-
+                    <h3>Step 3</h3><br>
+                        <img src="img/step3_motor.png" height="500">
+                        <br>
+                        <a href="#" class="navigate-down">
+                        </a>
                     </section>
-                    <section data-background="img/72-points-mesh.svg" data-background-repeat="repeat" data-background-size="100px" data-background-transition="zoom">
-                    <h2 class="intro">Upload 'RBG_Pot.ino'</h2>
+                    <section>
+                    <h3>Step 4</h3><br>
+                        <img src="img/step4_motor.png" height="500">
+                        <br>
+                        <a href="#" class="navigate-down">
+                        </a>
+                    </section>
+                    <section>
+                    <h3>Step 5</h3><br>
+                        <img src="img/step5_motor.png" height="500">
+                        <br>
+                        <a href="#" class="navigate-down">
+                        </a>
+                    </section>
+                    <section>
+                    <h3>Step 6</h3><br>
+                        <img src="img/step6_motor.png" height="500">
+                        <br>
+                        <a href="#" class="navigate-down">
+                        </a>
+                    </section>
+<section data-background="img/72-points-mesh.svg" data-background-repeat="repeat" data-background-size="100px" data-background-transition="zoom">
+                    <h2 class="intro">Upload 'MotorFader.ino'</h2>
             </section>
-            <section>
-                <h2>The Potentiometer</h2>
-                <img src="img/pot.png" height="450">
+            <section data-background="img/72-points-mesh.svg" data-background-repeat="repeat" data-background-size="100px" data-background-transition="zoom">
+                <h2 class="intro">Upload 'SerialMotorControl.ino'</h2>
             </section>
-            <section>
-                <h2>RGB LED</h2>
-                <img src="img/rgb.png" height="500">
             </section>
-            <section>
-                <pre><code>
-int val = analogRead(analogPin);    // read the input pin
-                    </code></pre>
-            </section>
+            
             </section>
             <section>
                 <section>
@@ -224,11 +234,12 @@ void loop()                     // we need this to be here even though its empty
                     </pre>
                 </section>
                 <section data-background="img/72-points-mesh.svg" data-background-repeat="repeat" data-background-size="100px" data-background-transition="zoom">
-                <h3 class="intro">WE can send Serial data as well</h3><br>
+                    <h3 class="intro">WE can send Serial data as well</h3>
+                    <br>
                     <h2 class="intro">Upload PhysicalPixel.ino</h2>
                 </section>
                 <section>
-                <code>
+                    <code>
 <pre>
 
 
@@ -272,11 +283,9 @@ void loop() {
   }
 }
 </code>
-                </pre>
-
+                    </pre>
+                </section>
             </section>
-            </section>
-                
             </section>
             <section>
                 <section>
@@ -338,29 +347,24 @@ delay(15); // waits 15ms for the servo to reach the position
                     <img src="img/servo_w_pot.png" height="600">
                 </section>
                 <section>
-
                     <h3 class="intro">Upload SERVO_KNOB.INO</h3>
                 </section>
             </section>
-
-                
-
             <section>
-                    <h3>Assignment:</h3>
-                    <ul>
+                <h3>Assignment:</h3>
+                <ul>
                     <li>Create a circuit with 3 elements of input and output, one must me analog input</li>
-                    <li>Write  a program for it, it would be nice if you log the input value to serial</li>
+                    <li>Write a program for it, it would be nice if you log the input value to serial</li>
                     <li>Write a one page paper describibing the circuit and program. Include a photo of the circuit in you paper</li>
-                    </ul>
-             </section>
-             <section>
-                    <h3>For Next Week:</h3>
-                    <ul>
+                </ul>
+            </section>
+            <section>
+                <h3>For Next Week:</h3>
+                <ul>
                     <li>Install NodeJS - https://nodejs.org/en/</li>
                     <li>Install Xcode Command Line Tools - http://osxdaily.com/2014/02/12/install-command-line-tools-mac-os-x/</li>
-
-                    </ul>
-             </section>
+                </ul>
+            </section>
         </div>
     </div>
     <script src="lib/js/head.min.js"></script>
