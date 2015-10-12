@@ -12,7 +12,7 @@ app.get('/', function(req, res) {
 });
 
 boardOne.on("ready", function() {
-    var servo = new five.Servo(9);
+    var servo = new five.Servo(3);
     io.on('connection', function(socket) {
         socket.on('message', function(msg) {
             console.log(msg);
