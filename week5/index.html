@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Internet of things: Week 5</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css" id="theme">
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- Printing and PDF exports -->
+    <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+    <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+</head>
+
+<body>
+    <div class="reveal">
+        <!-- Any section element inside of this container is displayed as a slide -->
+        <div class="slides">
+            <section>
+                <figure>
+                    <h2 class="intro">Internet of Things: Week 5</h2 class="intro">
+                        <h2 class="intro">Internet of Things: Week 5</h2 class="intro">
+                        <h2 class="intro">Internet of Things: Week 5</h2 class="intro">
+                        <h2 class="intro">Internet of Things: Week 5</h2 class="intro">                  
+                    </figure>
+                </section>
+
+                <section data-background="img/72-points-mesh.svg" data-background-transition="zoom">
+                    <p><b>Slides are here: <br>http://mhellar.github.io/IotClass/week4</b></p>
+                    <br>
+                    <p><b>Grab the code here: <br><a href="http://bit.ly/1VBx1N4">http://bit.ly/1VBx1N4</a></b></p>
+                </section>
+
+
+                <section>
+                    <ul>
+                        <h3>Topics for This Week:</h3>
+                        <li class="fragment">NodeJS: A deeper look</li>
+                         <li class="fragment">Javascipt Robotics</li>
+                         <li class="fragment"><a href="http://johnny-five.io">Johhny Five</a></li>
+                    </ul>
+                </section>
+                <section>
+                    <ul>
+                        <h3>What we are building this week:</h3>
+                    </ul>
+                </section>
+                
+                <section>                    
+                        <iframe src="https://player.vimeo.com/video/16379803" width="1000" height="542" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="https://vimeo.com/16379803">Viktor &ndash; 5000 Years of Chairs</a></p>
+                </section>
+
+                <section>                    
+                       <iframe src="https://player.vimeo.com/video/58940104" width="1000" height="542" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                </section>
+                <section>                    
+                        <h4>Cool meetups:</h4>
+                        <a href="http://bit.ly/1GDA1BH">Nodebots: Halloweek Hacks</a><br><br>
+                        <a href="http://www.meetup.com/Hackster-SF">Tuesday Hardware Hacks!</a>
+                </section>
+                <section>
+   
+                <section>                    
+                        <h4>What is NodeJS?</h4>
+                        <p>Node.js (Node) is an I/O environment built on top of Google Chrome's JavaScript runtime — essentially, a server-side implementation of JavaScript. </p>
+                        <a href="#" class="navigate-down">
+                        </a>
+                </section>
+
+                <section>                    
+                        <p>If we just type node at the command line, we get in interactive shell, also know as a REPL, aslo know as a read–eval–print loop. Here we can test out some javascript.</p>
+                        <p>Try this: <b>node</b></p><br>
+                        <p><b>console.log("hello world");</b></i></p>
+                        <br><p><b>Hit Control + c twice to quit</b></i></p>
+                </section>
+                <section>                    
+                        <p>We can write a Javascipt program in a file, and execute it by typing: <b>node <i>name_of_program</i></b></p><br>
+                        <br><b><p>Try this: cd <i>This weeks code folder</i></b></p>
+                        <br><b><p>node hello.js</p></b>
+                </section>
+                <section>                    
+                <b><p>contents of hello.js</p></b></br>
+                        <code class="hljs" data-trim contenteditable><pre>
+// Call the console.log function.
+console.log("Hello World");
+</pre>
+                        </code>
+                </section>
+
+                <section>                    
+                        <p>Node is good for writing webservers</i></p><br>
+                        <br><b><p>node simple_server.js</b></p>
+                        <br><b><p>Open a browser and go to localhost:8000</p></b>
+                </section>
+                <section>                    
+                <b><p>contents of hello.js</p></b></br>
+                        <code class="hljs" data-trim contenteditable><pre>
+// Load the http module to create an http server.
+var http = require('http');
+
+// Configure our HTTP server to respond with Hello World to all requests.
+var server = http.createServer(function (request, response) {
+  response.writeHead(200, {"Content-Type": "text/plain"});
+  response.end("Hello World\n");
+});
+
+// Listen on port 8000, IP defaults to localhost
+server.listen(8000);
+
+// Put a friendly message on the terminal
+console.log("Server running at http://localhost:8000/");
+</pre>
+                        </code>
+                </section>
+                 <section>                    
+                        <p>Node documentation:</i></p><br>
+                        <a href="https://nodejs.org/en/docs/">Here</a>
+                        
+                </section>
+                
+              
+
+                </section>
+
+                
+                <section>
+                    <section>
+                        <p>What is NPM:</p><br>
+                        <p>Node Package Manager</p><br>
+                        <br>
+                        <a href="#" class="navigate-down">
+                        </a>
+                    </section>
+                    <section>
+                        <p>Use NPM to install prebuilt node code</p><br>
+                        <p><a href="https://www.npmjs.com">https://www.npmjs.com</a></p><br>
+                    </section>
+                    <section>
+                        <p>Let's try it</p><br>
+                        <p><a href="https://www.npmjs.com/package/cfonts">sudo npm install cfonts -g</a></p><br>
+                        <p>cfonts -t "Hi Class"</p>
+                    </section>
+                    <section>
+                        <p>Let's try it</p><br>
+                        <p><a href="https://www.npmjs.com/package/cli-mandelbrot">sudo npm install -g cli-mandelbrot</a></p><br>
+                        <p>cli-mandelbrot</p>
+                    </section>
+                    <section>
+                        <p>Packages to connect with Arduino</p><br>
+                        <p><a href=" https://www.npmjs.com/package/serialport">Serialport Module</a></p><br>
+                    </section>
+                    <section>
+                        <p>Packages to connect with Arduino</p><br>
+                        <p><a href="https://www.npmjs.com/package/johnny-five">Johnny-Five</a></p><br>
+                        <p><a href="http://johnny-five.io/">http://johnny-five.io/</a></p><br>
+                    </section>
+
+                    </section>
+                    <section>
+                    <section>                    
+                        <h4>Project 1</h4>
+                        <p>Connect a potentiometer</p>
+                        <img src="img/1.png" height="500">
+                        <a href="#" class="navigate-down">
+                        </a>
+                </section>
+                <section>                    
+                        <h4>Project 1</h4>
+                        <p>Connect a potentiometer</p>
+                        <img src="img/2.png" height="500">
+                        <a href="#" class="navigate-down">
+                        </a>
+                </section>
+                <section>                    
+                        <h4>Project 1</h4>
+                        <p>Connect a potentiometer</p>
+                        <img src="img/3.png" height="500">
+                        <a href="#" class="navigate-down">
+                        </a>
+                </section>
+                <section>                    
+                        <h4>Project 1</h4>
+                        <p>1: Upload AnalogInOutSerial.ino to arduino from AnalogInOutSerial in the code folder</p><br>
+                        <p>2: Run node index.js from the serialbasic from serialbasic in the code folder</p>
+                  
+                        </a>
+                </section>
+                <section>                    
+                        <h4>Project 1</h4>
+                        <p>1: Run node index.js from the serialbasic from serial_ws in the code folder</p><br>
+                        <p>2: Open web browser go to <a href="http://localhost:3000"></a>http://localhost:3000</p>
+                  
+                        </a>
+                </section>
+                <section>                    
+                        <h4>Project 1</h4>
+                        <p>1: Run node index.js from serial_ws in the code folder</p><br>
+                        <p>2: Open web browser go to <a href="http://localhost:3000"></a>http://localhost:3000</p>
+                  
+                        </a>
+                </section>
+                <section>                    
+                        <h4>Project 1</h4>
+                        <p>1: Run node app.js from the from j5_circle in the code folder</p><br>
+                        <p>2: Open web browser go to <a href="http://localhost:3000"></a>http://localhost:3000</p>
+                  
+                        </a>
+                </section>
+                
+        
+
+
+            </section>
+            </section>
+            
+            
+            
+
+        </div>
+    </div>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    <script>
+    // Full list of configuration options available at:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'convex', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [{
+            src: 'lib/js/classList.js',
+            condition: function() {
+                return !document.body.classList;
+            }
+        }, {
+            src: 'plugin/markdown/marked.js',
+            condition: function() {
+                return !!document.querySelector('[data-markdown]');
+            }
+        }, {
+            src: 'plugin/markdown/markdown.js',
+            condition: function() {
+                return !!document.querySelector('[data-markdown]');
+            }
+        }, {
+            src: 'plugin/highlight/highlight.js',
+            async: true,
+            condition: function() {
+                return !!document.querySelector('pre code');
+            },
+            callback: function() {
+                hljs.initHighlightingOnLoad();
+            }
+        }, {
+            src: 'plugin/zoom-js/zoom.js',
+            async: true
+        }, {
+            src: 'plugin/notes/notes.js',
+            async: true
+        }]
+    });
+    </script>
+</body>
+
+</html>

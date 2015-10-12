@@ -1,0 +1,12 @@
+{
+  "name": "J5RGBLED",
+  "version": "0.0.1",
+  "description": "my first socket.io app",
+  "dependencies": {
+    "cfonts": "0.0.13",
+    "express": "4.10.2",
+    "johnny-five": "^0.8.98",
+    "serialport": "^1.7.4",
+    "socket.io": "1.2.0"
+  }
+}
