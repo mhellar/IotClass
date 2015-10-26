@@ -1,6 +1,7 @@
 //Import Twitter and J5 modules
 var Twitter = require('twitter')
 var five = require("johnny-five");
+var exec = require('child_process').exec;
 
 // Authenticates with Twitter using the (unofficial) twitter
 // package on npm. This is required for using the interesting parts
@@ -42,8 +43,9 @@ led = new five.Led(6);
 
 client.stream('statuses/filter', {
 //track a word
-        // track: 'yay'
-        locations: '-122.75,36.8,-121.75,37.8'
+        track: 'pumpkin'
+        // locations: '-122.75,36.8,-121.75,37.8'
+
     }, function(tweetStream) {
 
 
@@ -53,6 +55,9 @@ client.stream('statuses/filter', {
         tweetStream.on('data', function(tweet) {
             console.log(tweet.text);
             blink(led);
+            exec('say ' + tweet.text, function(err, stdout, stderr) {
+  console.log(stdout);
+  });
 
         })
     })

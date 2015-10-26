@@ -1,5 +1,4 @@
 //Import Twitter and J5 modules
-var Twitter = require('twitter')
 var five = require("johnny-five");
 var temperature;
 
@@ -10,7 +9,7 @@ var pubnub = require("pubnub")({
 });
 
     pubnub.subscribe({
-        channel: "my_channel",
+        channel: "Channel-p9uoju3qs",
     });
 
 //set up a new j5 board

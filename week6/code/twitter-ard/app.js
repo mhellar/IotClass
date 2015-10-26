@@ -42,7 +42,7 @@ led = new five.Led(6);
 
 client.stream('statuses/filter', {
 //track a word
-        track: 'yay'
+        track: 'defcon'
     }, function(tweetStream) {
 
 
