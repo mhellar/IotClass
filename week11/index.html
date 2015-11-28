@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Internet of things: Week 10</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/league.css" id="theme">
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- Printing and PDF exports -->
+    <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+    <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+</head>
+
+<body>
+    <div class="reveal">
+        <!-- Any section element inside of this container is displayed as a slide -->
+        <div class="slides">
+            <section>
+                <figure>
+                    <h2 class="intro">Internet of Things: Week 11</h2 class="intro">      
+                    <h2 class="intro">Internet of Things: Week 11</h2 class="intro">      
+                    <h2 class="intro">Internet of Things: Week 11</h2 class="intro">      
+                    <h2 class="intro">Internet of Things: Week 11</h2 class="intro">      
+                          
+
+                    </figure>
+                </section>
+
+                <section data-background="img/72-points-mesh.svg" data-background-transition="zoom">
+                    <p><b>Slides are here: <br>http://mhellar.github.io/IotClass/week10</b></p>
+                    <br>
+                    <p><b>Grab the code here: <br><a href="http://bit.ly/1OQp0Fi">http://bit.ly/1OQp0Fi</a></b></p>
+                </section>
+
+
+                <section>     
+                        <p>Rafael Lozano-Hemmer</p><br>
+                        <iframe width="420" height="315" src="https://www.youtube.com/embed/PJithExdqNc" frameborder="0" allowfullscreen></iframe>
+               </section> 
+               <section>  
+<a href="http://dashboard.sidlee.com/">Sid Lee Dashboard</a>
+                    </h3>
+                </section>
+                <section>
+                <section>
+                    <h3>Speaking to node with TouchOSC</h3>
+                    <img src="img/osc.png" height="500">
+                    <a href="#" class="navigate-down">
+                    </a>
+                </section>
+
+                <section>
+                    <h3>Set your phone to AAU WIFI</h3>
+                </section>
+                <section>
+                    <h3>Open your system preferences, the click the network icon</h3>
+                    <img src="img/compip.png" height="500">
+                </section>
+                <section>
+                    <img src="img/touchosc1.png" height="600">
+                </section>
+                <section>
+                    <img src="img/touchosc2.png" height="600">
+                </section>
+                <section>
+                    <h3>Choose the simple layout in TouchOSC app</h3>
+                    <img src="img/basic.png" height="500">
+                </section>
+                 <section>
+                    <ul>
+                        <li>Make a new folder called osc</li>
+                        <li class="fragment">Open the terminal and type 'cd' + SPACE + drag folder onto the terminal</li>
+                        <li class="fragment">Type 'npm init'</li>
+                        <li class="fragment">Fill out the questions</li>
+                    </ul>
+                </section>
+                <section>
+                    <ul>
+                        <li>Drag the folder on to Sublime text</li>
+                        <li class="fragment">Type 'npm install node-osc --save'</li>
+                    </ul>
+                </section>
+            <section>
+                <ul>
+                    <li>Create a new file in Sublime</li>
+                    <li class="fragment">Enter the code below:</li>
+                    <li class="fragment">Change the port to your phones outgoing port and ip to phones IP</li>
+                    <li class="fragment">Save as 'index.js' in your new folder</li>
+                </ul>
+                <pre><code class="hljs" data-trim contenteditable width>
+var osc = require('node-osc');
+                
+var oscServer = new osc.Server(3333, '0.0.0.0');
+oscServer.on("message", function(msg, rinfo) {
+    console.log("TUIO message:");
+    console.log(msg);
+});
+
+                    </code></pre>
+            </section>
+            <section>
+                <h3>In the terminal cd to your new directory and run 'node index.js'</h3>
+                </section>
+
+                <section>
+                    <h3>CD OSC in the code folder</h3>
+                    <h3>run 'node app.js</h3>
+                </section>
+                <section>
+                    <h3>Choose a layout</h3>
+                    <h3>And program to talk to your page</h3>
+                </section>
+                </section>
+<section>
+                             <section>                    
+                        <h3>Face OSC</h3>
+                        <img src="img/faceosc.jpg">
+                        <a href="https://github.com/kylemcdonald/ofxFaceTracker/downloads">https://github.com/kylemcdonald/ofxFaceTracker/downloads</a>
+                </section>
+                <section>                    
+                        <h3>Face OSC Templates</h3>
+                        <img src="img/faceosct.jpg">
+                        <a href="https://github.com/CreativeInquiry/FaceOSC-Templates">https://github.com/CreativeInquiry/FaceOSC-Templates</a>
+                </section>
+                <section>                    
+                        <h3>Face OSC send data over port 8338</h3>
+                        <img src="img/faceosce.png">
+                        <p>There's a simple Node reciever program in the code folder, osc_faceosc</p>
+                </section>
+                </section>
+                <section>
+                <section>
+                <h3>RevealJs</h3>
+                <a href="https://github.com/kylemcdonald/ofxFaceTracker/downloads">https://github.com/kylemcdonald/ofxFaceTracker/downloads</a>
+                </section>
+                </section>
+        </div>
+    </div>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    <script>
+    // Full list of configuration options available at:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'convex', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [{
+            src: 'lib/js/classList.js',
+            condition: function() {
+                return !document.body.classList;
+            }
+        }, {
+            src: 'plugin/markdown/marked.js',
+            condition: function() {
+                return !!document.querySelector('[data-markdown]');
+            }
+        }, {
+            src: 'plugin/markdown/markdown.js',
+            condition: function() {
+                return !!document.querySelector('[data-markdown]');
+            }
+        }, {
+            src: 'plugin/highlight/highlight.js',
+            async: true,
+            condition: function() {
+                return !!document.querySelector('pre code');
+            },
+            callback: function() {
+                hljs.initHighlightingOnLoad();
+            }
+        }, {
+            src: 'plugin/zoom-js/zoom.js',
+            async: true
+        }, {
+            src: 'plugin/notes/notes.js',
+            async: true
+        }]
+    });
+    </script>
+</body>
+
+</html>

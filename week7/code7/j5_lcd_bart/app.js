@@ -3,6 +3,9 @@ var exec = require('child_process').exec;
 //This variable stores the command we want to execute, we are going to use the say command
 var say = 'say ';
 
+//create a bart oobject that queries the API every 5 seconds, use npm install bart to install
+var bart = require('bart').createClient({"interval":20000});
+
 //create new johnny-five object and board
 var five = require("johnny-five"),
   board, lcd;
@@ -29,6 +32,25 @@ function speak(whatosay){
   console.log(whatosay)
 }
 
-lcd.cursor(0, 0).clear().print("Hi there");
+function queryBart(){
+//choose which bart staion to to monitor, station abbreviations are here: http://api.bart.gov/docs/overview/abbrev.aspx
+bart.on('powl', function(estimates){
+   //log the results to the console
+   console.log(estimates); 
+   // store the results in some variables
+   var nextTrain = "next train in " + estimates[0].minutes;
+   var dest = "Dest: " + estimates[0].destination;
+   // print results to the lcd
+   setTimeout(function() {
+   lcd.cursor(0, 0).clear().print(nextTrain + "M");
+   lcd.cursor(1, 0).print("Dest: " + estimates[0].destination);
+   // call the function
+   speak(nextTrain + " minutes" + " destination is " + estimates[0].destination);
+   }, 1000);
+})
+}
+
+//call the function
+queryBart();
 
 });
