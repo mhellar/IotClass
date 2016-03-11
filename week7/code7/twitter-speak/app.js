@@ -28,7 +28,7 @@ var client = new Twitter({
 
 client.stream('statuses/filter', {
 //track a word
-        track: 'iphone',
+        track: 'david bowie',
         language: 'en',
 
     }, function(tweetStream) {

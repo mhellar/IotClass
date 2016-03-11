@@ -30,15 +30,15 @@
         <div class="slides">
             <section>
                 <figure>
-                    <h2 class="intro">Internet of Things: Week 6</h2 class="intro">
-                        <h2 class="intro">Internet of Things: Week 6</h2 class="intro">
-                        <h2 class="intro">Internet of Things: Week 6</h2 class="intro">
-                        <h2 class="intro">Internet of Things: Week 6</h2 class="intro">                  
+                    <h2 class="intro">Internet of Things: Week 5</h2 class="intro">
+                        <h2 class="intro">Internet of Things: Week 5</h2 class="intro">
+                        <h2 class="intro">Internet of Things: Week 5</h2 class="intro">
+                        <h2 class="intro">Internet of Things: Week 5</h2 class="intro">                  
                     </figure>
                 </section>
 
                 <section data-background="img/72-points-mesh.svg" data-background-transition="zoom">
-                    <p><b>Slides are here: <br>http://mhellar.github.io/IotClass/week6</b></p>
+                    <p><b>Slides are here: <br>http://mhellar.github.io/IotClass/311</b></p>
                     <br>
                     <p><b>Grab the code here: <br><a href="http://bit.ly/1W167hR">http://bit.ly/1W167hR</a></b></p>
                 </section>
@@ -47,7 +47,9 @@
                 <section>
                     <ul>
                         <h3>Topics for This Week:</h3>
-                        <li class="fragment">More fun with Johnny Five</li>
+                        <li class="fragment">NodeJS Warmups</li>
+                        <li class="fragment">NodeJS Serial Port</li>
+                        <li class="fragment">Fun with Johnny Five</li>
                          <li class="fragment">Connecting to the web with APIs</li>
                          <li class="fragment">Midterm Projects ;)</li>
                     </ul>
@@ -72,18 +74,9 @@ Saturday 10am - 6pm
                 </section>
 
 
-                <section>
-                    <h3>Go see this show!</h3>
-                    <img src="img/rath.jpg">
-                    <a href="http://www.thecjm.org/on-view/currently/neat-new-experiments-in-art-and-technology/about"><br>NEAT: New Experiments in Art and Technology</a>
-                </section>
-                                <section>
-                <h3>Field Trip?</h3>
-<a href="http://www.thecjm.org/on-view/currently/neat-new-experiments-in-art-and-technology/about"><br>NEAT: New Experiments in Art and Technology</a><br>
-<a href="http://recode.net/2015/07/09/inside-targets-new-tech-funhouse-and-search-for-its-next-billion-dollar-business/"><br>Target Tech Open House</a><br>
-<a href="http://creativity.org/"><br>Childrens Creativity Museum</a>
 
-<a href="https://www.tinkercad.com/">TinkerCAD</a>
+                                <section>
+                <h1>Field Trip?</h1>
                 </section>
                 <section>                    
                         <iframe src="https://player.vimeo.com/video/50590952?color=c9ff23" width="800" height="450" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe><br>
@@ -100,6 +93,115 @@ Saturday 10am - 6pm
                 </section>
                 <section>                    
                         <iframe src="https://player.vimeo.com/video/129674054?color=c9ff23" width="800" height="450" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                </section>
+
+                <section>
+                <section>
+                    <h3>
+                        Building out a basic web application with express.
+                    </h3>
+                    <a href="#" class="navigate-down">
+                    </a>
+                </section>
+                <section>
+                    <p>
+                        Express.js is a Node.js web application server framework, designed for building single-page, multi-page, and hybrid web applications. It is the de facto standard server framework for node.js
+                    </p>
+                </section>
+                <section>
+                    <a href="http://expressjs.com/">Express</a>
+                </section>
+                <section>
+                    <ul>
+                        <li>Make a new folder called webserver</li>
+                        <li class="fragment">Open the terminal and type 'cd' + SPACE + drag folder onto the terminal</li>
+                        <li class="fragment">Type 'npm init'</li>
+                        <li class="fragment">Fill out the questions</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Install Express</h3>
+                    <h3>Type: sudo npm install --express</h3>
+                </section>
+                <section>
+                    <ul>
+                        <li>Create a new file in Sublime</li>
+                        <li class="fragment">Enter the code below:</li>
+                        <li class="fragment">Save as 'index.js' in your new folder</li>
+                    </ul>
+                    <pre><code class="hljs" data-trim contenteditable width>
+//import express 
+var express = require('express');
+//create express object named app
+var app = express();
+
+//instantiate a server on port 3030
+var server = app.listen(3030);
+
+//expose the local public folder for inluding files js, css etc..
+app.use(express.static('public'));
+
+//on a request to / serve index.html
+app.get('/', function(req, res) {
+    res.sendFile(__dirname + '/index.html');
+});
+                    </code></pre>
+                </section>
+                <section>
+                    <ul>
+                        <li>Create a new file in Sublime</li>
+                        <li class="fragment">Enter the code below without the comments:</li>
+                        <li class="fragment">Save as 'index.html' in your new folder</li>
+                    </ul>
+                    <pre><code class="hljs" data-trim contenteditable width>
+<!DOCTYPE html>
+<!-- <html>
+<head>
+    <title>Test</title>
+</head>
+<body>
+<p>hi</p>
+</body>
+</html> -->
+ </code></pre>
+                </section>
+                <section>
+                    <h3>Open http://localhost:3030/ in the browser</h3>
+                </section>
+                <section>
+                    <h3>Takes a few minutes to add some html to the page</h3>
+                </section>
+            </section>
+
+            <section>
+                    <section>                    
+                        <h4>Project 1</h4>
+                        <p>Connect a potentiometer</p>
+                        <img src="img/1.png" height="500">
+                        <a href="#" class="navigate-down">
+                        </a>
+                </section>
+                <section>                    
+                        <h4>Project 1</h4>
+                        <p>Connect a potentiometer</p>
+                        <img src="img/2.png" height="500">
+                      
+                </section>
+    
+                <section>                    
+                        <h4>Project 1</h4>
+                        <p>1: Upload AnalogInOutSerial.ino to arduino from AnalogInOutSerial in the code folder</p><br>
+                        <p>2: Run node index.js from the serialbasic from serialbasic in the code folder</p>
+                  
+                        </a>
+                </section>
+                <section>                    
+                        <h4>Project 1</h4>
+                        <p>1: Run node index.js from the serialbasic from serial_ws in the code folder</p><br>
+                        <p>2: Open web browser go to <a href="http://localhost:3000"></a>http://localhost:3000</p>
+                  
+                        </a>
+                </section>
                 </section>
 
                 <section>
@@ -386,25 +488,7 @@ var client = new Twitter({
             </section>
             <section>
                 <section data-background="img/72-points-mesh.svg" data-background-repeat="repeat" data-background-size="100px" data-background-transition="zoom">
-                <h3 class="intro">Midterms are due on Nov 2</h3>
-                    <a href="#" class="navigate-down">
-                    </a>
-                </section>
-            </section>
-            <section>
-                <section data-background="img/72-points-mesh.svg" data-background-repeat="repeat" data-background-size="100px" data-background-transition="zoom">
-                <h3 class="intro">Makeup Class is:</h3><br>
-                <h3 class="intro">Monday, 10/26 at 3:00pm in room 415</h3><br>
-                <h3 class="intro">Hackathon Style, work on midterm</h3><br>
-                <h3 class="intro">Prizes! Neopixels, Sensors, Boards etc..</h3><br>
-                    <a href="#" class="navigate-down">
-                    </a>
-                </section>
-            </section>
-            <section>
-                <section data-background="img/72-points-mesh.svg" data-background-repeat="repeat" data-background-size="100px" data-background-transition="zoom">
-                <h3 class="intro">Can't make it?</h3><br>
-                <h3 class="intro">Lets arrange a time to meet</h3><br>
+                <h3 class="intro">Midterms</h3>
                     <a href="#" class="navigate-down">
                     </a>
                 </section>

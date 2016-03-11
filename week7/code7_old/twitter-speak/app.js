@@ -28,7 +28,7 @@ var client = new Twitter({
 
 client.stream('statuses/filter', {
 //track a word
-        track: 'iphone',
+        track: 'trump',
         language: 'en',
 
     }, function(tweetStream) {
