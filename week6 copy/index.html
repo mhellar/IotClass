@@ -1,0 +1,556 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Internet of things: Week 5</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css" id="theme">
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- Printing and PDF exports -->
+    <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+    <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+</head>
+
+<body>
+    <div class="reveal">
+        <!-- Any section element inside of this container is displayed as a slide -->
+        <div class="slides">
+            <section>
+                <figure>
+                    <h2 class="intro">Internet of Things: Week 5</h2 class="intro">
+                        <h2 class="intro">Internet of Things: Week 5</h2 class="intro">
+                        <h2 class="intro">Internet of Things: Week 5</h2 class="intro">
+                        <h2 class="intro">Internet of Things: Week 5</h2 class="intro">                  
+                    </figure>
+                </section>
+
+                <section data-background="img/72-points-mesh.svg" data-background-transition="zoom">
+                    <p><b>Slides are here: <br>http://mhellar.github.io/IotClass/311</b></p>
+                    <br>
+                    <p><b>Grab the code here: <br><a href="http://bit.ly/1W167hR">http://bit.ly/1W167hR</a></b></p>
+                </section>
+
+
+                <section>
+                    <ul>
+                        <h3>Topics for This Week:</h3>
+                        <li class="fragment">NodeJS Warmups</li>
+                        <li class="fragment">NodeJS Serial Port</li>
+                        <li class="fragment">Fun with Johnny Five</li>
+                         <li class="fragment">Connecting to the web with APIs</li>
+                         <li class="fragment">Midterm Projects ;)</li>
+                    </ul>
+                </section>
+                <section>
+                <h3>3D printing Lab!</h3>
+                <pre>
+Students provide their own filament unless they are enrolled in JEM 143 or JEM 660 – it’s readily available online and around town. For the remainder of the semester they may also purchase the requisite amount for your print from the Industrial Design Department's Tool Crib located next to the lab.
+
+The cost per print will be $3 if they provide your own filament – and .15c/gram + $3 if you use the IND supplied grey filament. Students currently enrolled in JEM 143 and JEM 660 are exempt from these fees and may use the course filament supplies as needed.
+
+Below are the lab hours:
+Monday 2:50pm - 4:50pm
+Thursday 6:30pm - 8:30pm
+Saturday 10am - 6pm
+<pre>
+                </section>
+<section>
+                <h3>3D printing!</h3>
+<a href="https://www.thingiverse.com/">Thingverse</a><br>
+<a href="https://www.tinkercad.com/">TinkerCAD</a>
+                </section>
+
+
+
+                                <section>
+                <h1>Field Trip?</h1>
+                </section>
+                <section>                    
+                        <iframe src="https://player.vimeo.com/video/50590952?color=c9ff23" width="800" height="450" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe><br>
+                        <a href="http://www.future-cities-lab.net/home">Future Cities Lab</a>
+                </section>
+
+                <section>                    
+                       <img src="img/darknet.jpg"><br>
+                       <a href="https://wwwwwwwwwwwwwwwwwwwwww.bitnik.org/media/news/kunsthalle_darknet/KHStGallen_Darknet_2014-10_MG_3299_LowRes.jpg">Random Darknet Shopper</a>
+                </section>
+                <section>                    
+                        <iframe src="https://player.vimeo.com/video/42896836?color=c9ff23" width="800" height="450" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                        <a href="https://www.flickr.com/photos/ettubrute/sets/72157629909864772/"><br>Point Cloud, James Leng</a>
+                </section>
+                <section>                    
+                        <iframe src="https://player.vimeo.com/video/129674054?color=c9ff23" width="800" height="450" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                </section>
+
+                <section>
+                <section>
+                    <h3>
+                        Building out a basic web application with express.
+                    </h3>
+                    <a href="#" class="navigate-down">
+                    </a>
+                </section>
+                <section>
+                    <p>
+                        Express.js is a Node.js web application server framework, designed for building single-page, multi-page, and hybrid web applications. It is the de facto standard server framework for node.js
+                    </p>
+                </section>
+                <section>
+                    <a href="http://expressjs.com/">Express</a>
+                </section>
+                <section>
+                    <ul>
+                        <li>Make a new folder called webserver</li>
+                        <li class="fragment">Open the terminal and type 'cd' + SPACE + drag folder onto the terminal</li>
+                        <li class="fragment">Type 'npm init'</li>
+                        <li class="fragment">Fill out the questions</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Install Express</h3>
+                    <h3>Type: sudo npm install --express</h3>
+                </section>
+                <section>
+                    <ul>
+                        <li>Create a new file in Sublime</li>
+                        <li class="fragment">Enter the code below:</li>
+                        <li class="fragment">Save as 'index.js' in your new folder</li>
+                    </ul>
+                    <pre><code class="hljs" data-trim contenteditable width>
+//import express 
+var express = require('express');
+//create express object named app
+var app = express();
+
+//instantiate a server on port 3030
+var server = app.listen(3030);
+
+//expose the local public folder for inluding files js, css etc..
+app.use(express.static('public'));
+
+//on a request to / serve index.html
+app.get('/', function(req, res) {
+    res.sendFile(__dirname + '/index.html');
+});
+                    </code></pre>
+                </section>
+                <section>
+                    <ul>
+                        <li>Create a new file in Sublime</li>
+                        <li class="fragment">Enter the code below without the comments:</li>
+                        <li class="fragment">Save as 'index.html' in your new folder</li>
+                    </ul>
+                    <pre><code class="hljs" data-trim contenteditable width>
+<!DOCTYPE html>
+<!-- <html>
+<head>
+    <title>Test</title>
+</head>
+<body>
+<p>hi</p>
+</body>
+</html> -->
+ </code></pre>
+                </section>
+                <section>
+                    <h3>Open http://localhost:3030/ in the browser</h3>
+                </section>
+                <section>
+                    <h3>Takes a few minutes to add some html to the page</h3>
+                </section>
+            </section>
+
+            <section>
+                    <section>                    
+                        <h4>Project 1</h4>
+                        <p>Connect a potentiometer</p>
+                        <img src="img/1.png" height="500">
+                        <a href="#" class="navigate-down">
+                        </a>
+                </section>
+                <section>                    
+                        <h4>Project 1</h4>
+                        <p>Connect a potentiometer</p>
+                        <img src="img/2.png" height="500">
+                      
+                </section>
+    
+                <section>                    
+                        <h4>Project 1</h4>
+                        <p>1: Upload AnalogInOutSerial.ino to arduino from AnalogInOutSerial in the code folder</p><br>
+                        <p>2: Run node index.js from the serialbasic from serialbasic in the code folder</p>
+                  
+                        </a>
+                </section>
+                <section>                    
+                        <h4>Project 1</h4>
+                        <p>1: Run node index.js from the serialbasic from serial_ws in the code folder</p><br>
+                        <p>2: Open web browser go to <a href="http://localhost:3000"></a>http://localhost:3000</p>
+                  
+                        </a>
+                </section>
+                </section>
+
+                <section>
+   
+                <section data-background="img/johnny-five-fb.png" data-background-transition="zoom">             
+                        
+                </section>
+                <section data-background="img/sc_poster.jpg" data-background-size="600px" data-background-transition="zoom">             
+                        
+                </section>
+
+                <section>             
+                        <p>
+                        Johnny-Five is the original JavaScript Robotics programming framework. Released by Bocoup in 2012, Johnny-Five is maintained by a community of passionate software developers and hardware engineers. Over 75 developers have made contributions towards building a robust, extensible and composable ecosystem.
+                        </p>
+                </section>
+
+                <section data-background="img/led_1.png" data-background-size="1000px" data-background-transition="zoom">             
+                        
+                </section>
+
+                <section>         
+                        <h3>Starting a new Node app</h3>       
+                        <ul>          
+                        <li>Create a new folder named, 'J5_led_1'</li>
+                        <li class="fragment">Open the terminal</li>
+                        <li class="fragment">type 'cd' & space</li>
+                        <li class="fragment">drag your folder to the terminal and hit return</li>
+                        </ul>
+                </section>
+                <section> 
+                               
+                        <ul>          
+                        <li>Now we are in our new folder in the terminal</li>
+                        <li class="fragment">Type 'npm init' & hit return</li>
+                        <li class="fragment">fill out the questions</li>
+                        <li class="fragment">drag your folder onto Sublime Text</li>
+                        </ul>
+                </section>
+                <section> 
+                        <ul>          
+                        <li>type 'npm install johnny-five --save</li>
+                        <li class="fragment">Have a look at the package.json file that was generated</li>
+                        <li class="fragment">This stores metadata about our app</li>
+                        </ul>
+                </section>
+
+                <section>                    
+                <b><p>contents of package.json</p></b></br>
+                        <code class="hljs" data-trim contenteditable><pre>
+{
+  "name": "J5_led_1",
+  "version": "1.0.0",
+  "description": "A Johnny Five LED app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "johnny-five": "^0.8.106"
+  }
+}
+</pre>
+                        </code>
+                </section>
+
+                <section>                        
+                        <h3>create a new file, enter the following code and save as index.js in your new folder</h3>
+                                                <code class="hljs" data-trim contenteditable><pre>
+var five = require("johnny-five");
+var board = new five.Board();
+
+board.on("ready", function() {
+  var led = new five.Led(6);
+  led.blink(500);
+});
+</pre>
+                        </code>
+                </section>
+<section> 
+                        <ul>          
+                        <li>Upload firmata to arduino</li>
+                        <li class="fragment">run 'node index.js' at the terminal</li>
+                        </ul>
+                </section>
+               <section>                        
+                        <h3>try a pulse</h3>
+                                                <code class="hljs" data-trim contenteditable><pre>
+var five = require("johnny-five");
+var board = new five.Board();
+
+board.on("ready", function() {
+  var led = new five.Led(6);
+led.pulse(500);
+});
+</pre>
+                        </code>
+                </section>
+                                <section>                    
+                <b><p>Led Animations</p></b></br>
+<code class="hljs" data-trim contenteditable><pre>
+var five = require("johnny-five");
+var board = new five.Board();
+
+board.on("ready", function() {
+  var led = new five.Led(6);
+led.pulse({
+  easing: "linear",
+  duration: 3000,
+  cuePoints: [0, 0.2, 0.4, 0.6, 0.8, 1],
+  keyFrames: [0, 10, 0, 50, 0, 255],
+  onstop: function() {
+    console.log("Animation stopped");
+  }
+});
+});
+</pre>
+                        </code>
+                </section>
+
+                 <section>                    
+                        <p>Reference</i></p><br>
+                        <a href="http://johnny-five.io/api/led/">LED API</a><br>
+                        <a href="http://johnny-five.io/api/animation/#segment-properties">Animation API</a><br>
+                        <a href="http://johnny-five.io/api/">Full API</a>
+
+                </section>
+                
+              
+
+                </section>
+
+                
+                <section>
+                    
+                    <section>
+                        <h3>Project: Twitter Lamp</h3>
+                        <img src="img/Twitter_logo_blue.png" height="400"><img src="img/botrobot.jpg" height="400">
+                    </section>
+                    <section data-background="img/72-points-mesh.svg" data-background-repeat="repeat" data-background-size="100px" data-background-transition="zoom">
+                        <h3>Keep the same circuit</h3>
+                    </section>
+                    <section data-background="img/72-points-mesh.svg" data-background-repeat="repeat" data-background-size="100px" data-background-transition="zoom">
+                        <h3>Go Here:</h3><br>
+                        <a href="https://apps.twitter.com/">https://apps.twitter.com/</a>
+                        <img src="img/twit.png" height="400"><br>
+                        <h3>create a new app</h3>
+                    </section>
+                    <section data-background="img/72-points-mesh.svg" data-background-repeat="repeat" data-background-size="100px" data-background-transition="zoom">
+                        <h3>Gather tokens and keys</h3><br>
+                        <img src="img/tw_tokens.png" height="400"><br>
+                    </section>
+                                                   <section>                    
+                <b><p>Update code in code/twitter-ard/app.js</p></b></br>
+<code class="hljs" data-trim contenteditable><pre>
+var client = new Twitter({
+    consumer_key: 'Enter Here',
+    consumer_secret: 'Enter Here',
+    access_token_key: 'Enter Here',
+    access_token_secret: 'Enter Here'
+})
+</pre>
+                        </code>
+                </section>
+
+                    
+
+                    
+                    <section data-background="img/72-points-mesh.svg" data-background-repeat="repeat" data-background-size="100px" data-background-transition="zoom">
+                    <h2 class="intro">From the terminal:</h2>
+                    <br>
+                    <h2 class="intro">'cd twitter-ard'</h2>
+                    <br>
+                    <h2 class="intro">'node app.js'</h2>
+            </section>
+            <section data-background="img/terminal.gif" data-background-size="1200px">
+            </section>
+            <section data-background="img/72-points-mesh.svg" data-background-repeat="repeat" data-background-size="100px" data-background-transition="zoom">
+                <h2 class="intro">From the terminal:</h2>
+                <br>
+                <h2 class="intro">'cd twitter-ard-location'</h2>
+                <br>
+                <h2 class="intro">'node app.js'</h2>
+            </section>
+            <section>
+                <p>Twitter API Reference</i>
+                </p>
+                <br>
+                <a href="https://dev.twitter.com/streaming/overview/request-parameters#language">Here</a>
+                <br>
+            </section>
+            </section>
+            <section>
+                <section>
+                    <h3>Project: Twitter Button</h3>
+                    <img src="img/internet_earth.png" height="400"><img src="img/Push-Button-Switch.jpg" height="400">
+                    <a href="#" class="navigate-down">
+                    </a>
+                </section>
+                <section>
+                    <img src="img/button.png" height="600">
+                </section>
+                <section>
+                    <b><p>Update code in code/twitter-ard/app.js</p></b></br>
+                    <code class="hljs" data-trim contenteditable><pre>
+var client = new Twitter({
+    consumer_key: 'Enter Here',
+    consumer_secret: 'Enter Here',
+    access_token_key: 'Enter Here',
+    access_token_secret: 'Enter Here'
+})
+</pre>
+                        </code>
+                </section>
+                <section data-background="img/72-points-mesh.svg" data-background-repeat="repeat" data-background-size="100px" data-background-transition="zoom">
+                    <h2 class="intro">From the terminal:</h2>
+                    <br>
+                    <h2 class="intro">'cd twitter-button'</h2>
+                    <br>
+                    <h2 class="intro">'node app.js'</h2>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h3>Project: Temprature Dashboard</h3>
+                    <img src="img/temp.png" height="600">
+                    <a href="#" class="navigate-down">
+                    </a>
+                </section>
+                <section>
+                    <img src="img/tmp36.gif" height="400">
+                </section>
+                <section data-background="img/72-points-mesh.svg" data-background-repeat="repeat" data-background-size="100px" data-background-transition="zoom">
+                    <h2 class="intro">From the terminal:</h2>
+                    <br>
+                    <h2 class="intro">'cd ard-tmp36'</h2>
+                    <br>
+                    <h2 class="intro">'node app.js'</h2>
+                </section>
+                <section>
+                    <h3>Log in to PubNub, create a new app</h3>
+                    <img src="img/pubnub.png">
+                </section>
+                <section>
+                    <h3>Get the Publish and Subscribe Keys for your app</h3>
+                    <img src="img/pubnub3.png">
+                    <h3>add them to tmp-pubnub/app.js</h3>
+                </section>
+                <section>
+                    <h3>Click on the debug console for you app and get the channel name.</h3>
+                    <img src="img/pubnub4.png" height="400">
+                    <h3>add it to tmp-pubnub/app.js</h3>
+                </section>
+                <section data-background="img/72-points-mesh.svg" data-background-repeat="repeat" data-background-size="100px" data-background-transition="zoom">
+                    <h2 class="intro">From the terminal:</h2>
+                    <br>
+                    <h2 class="intro">'cd tmp-pubnub'</h2>
+                    <br>
+                    <h2 class="intro">'node app.js'</h2>
+                    <br>
+                    <h2 class="intro">check the debug console</h2>
+                </section>
+                <section data-background="img/72-points-mesh.svg" data-background-repeat="repeat" data-background-size="100px" data-background-transition="zoom">
+                    <h2 class="intro">Edit tmp-pubnub/fancy.html</h2>
+                    <br>
+                    <h2 class="intro">at the bottom of the page</h2>
+                    <br>
+                    <h2 class="intro">enter keys and channel</h2>
+                </section>
+                <section data-background="img/72-points-mesh.svg" data-background-repeat="repeat" data-background-size="100px" data-background-transition="zoom">
+                    <h2 class="intro">open fancy.html in the browser</h2>
+                    <br>
+                </section>
+            </section>
+            <section>
+                <section data-background="img/72-points-mesh.svg" data-background-repeat="repeat" data-background-size="100px" data-background-transition="zoom">
+                <h3 class="intro">Interactive Shader Example</h3><br>
+                <h3 class="intro">j5_shader/app.js</h3><br>
+                    <a href="#" class="navigate-down">
+                    </a>
+                </section>
+            </section>
+            <section>
+                <section data-background="img/72-points-mesh.svg" data-background-repeat="repeat" data-background-size="100px" data-background-transition="zoom">
+                <h3 class="intro">Midterms</h3>
+                    <a href="#" class="navigate-down">
+                    </a>
+                </section>
+            </section>
+                <section>
+                <section data-background="img/72-points-mesh.svg" data-background-repeat="repeat" data-background-size="100px" data-background-transition="zoom">
+                <h3 class="intro">Next Weeks Assignment:</h3><br>
+                <h3 class="intro">Bring 2 slides explaining your midterm idea.</h3><br>
+                    <a href="#" class="navigate-down">
+                    </a>
+                </section>
+            </section>
+            </section>
+        </div>
+    </div>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    <script>
+    // Full list of configuration options available at:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'convex', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [{
+            src: 'lib/js/classList.js',
+            condition: function() {
+                return !document.body.classList;
+            }
+        }, {
+            src: 'plugin/markdown/marked.js',
+            condition: function() {
+                return !!document.querySelector('[data-markdown]');
+            }
+        }, {
+            src: 'plugin/markdown/markdown.js',
+            condition: function() {
+                return !!document.querySelector('[data-markdown]');
+            }
+        }, {
+            src: 'plugin/highlight/highlight.js',
+            async: true,
+            condition: function() {
+                return !!document.querySelector('pre code');
+            },
+            callback: function() {
+                hljs.initHighlightingOnLoad();
+            }
+        }, {
+            src: 'plugin/zoom-js/zoom.js',
+            async: true
+        }, {
+            src: 'plugin/notes/notes.js',
+            async: true
+        }]
+    });
+    </script>
+</body>
+
+</html>
